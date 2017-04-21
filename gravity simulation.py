@@ -48,10 +48,13 @@ class mesh(physics):
         self.pos.y = random.uniform(0,window[1])
         self.pos.z = random.uniform(0,20)
         self.radius = random.uniform(0,20)
-    def show():
-        pass
+    
 
-
+def display(_object_):
+    global screen
+    x,y = _object_.pos.get2d()
+    x ,y = int(x),int(y)
+    pygame.draw.circle(screen,color.BLUE,(x,y),int(_object_.radius))
 
 
 
@@ -94,13 +97,16 @@ clock = pygame.time.Clock()
 m1 = mesh((0,10,30))
 gameOver = False
 color = colors()
-
+print m1.pos.get()
 while True:
     # setting the smallest time variation
     dt = float(clock.tick(60))/1000
     clock.tick(60)
     # Fill the background color to screen as black
     screen.fill(color.WHITE)
+    display(m1)
+    m1.randomize(window)
+    
     # input
     input()
     
@@ -108,7 +114,8 @@ while True:
     pygame.display.update()
     # clear the screen
     screen.fill(color.WHITE)
-
+    
+    
     if gameOver == True :
         break
 

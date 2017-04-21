@@ -6,6 +6,8 @@ class vertex(object):
         self.x,self.y,self.z = x,y,z
     def get(self):
         return self.x,self.y,self.z
+    def get2d(self):
+        return self.x,self.y
 '''
 ==========================================
     vector class
