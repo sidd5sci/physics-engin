@@ -1,5 +1,10 @@
 
 from vector import *
+
+# universal gravitational constant
+G = 6.67408e-11 # m3 kg-1 s-2
+# earth mass
+MassEearth = 6e24  # kg
 '''
 ==========================================
     physics class
@@ -7,15 +12,15 @@ from vector import *
 '''
 class physics(object):
 
-    def __init__(self,pos):
+    def __init__(self):
 
         # mass
         self.mass = 1.0 # kg
         # motion physics / newton physics
-        self.pos = list(pos)
-        self.velocity = vector(0,0,0)
-        self.acc = vector(0,0,0)
-        self.force = vector(0,0,0)
+        self.pos = ZERO_VERTEX
+        self.velocity = ZERO_VECTOR
+        self.acc = ZERO_VECTOR
+        self.force = ZERO_VECTOR
         self.time = 0.0
         self.dt = 0.15
         # material physics
