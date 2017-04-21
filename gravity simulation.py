@@ -103,11 +103,14 @@ while True:
     screen.fill(color.WHITE)
     # input
     input()
+    
+    # update the screen
+    pygame.display.update()
+    # clear the screen
+    screen.fill(color.WHITE)
+
     if gameOver == True :
         break
-
-
-
 
 
 
